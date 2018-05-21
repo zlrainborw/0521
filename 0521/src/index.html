@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src='./js/libs/flexible.js'></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./fonts2/iconfont.css">
+</head>
+
+<body>
+    <div class='wrap'>
+        <header>
+            <a href="javascript">
+                <i class="icon iconfont icon-xiangzuo"></i>
+                <span>返回</span>
+            </a>
+            <a href="javascript">
+                <span>爱心筹--发布</span>
+            </a>
+            <a href="javascript">
+                <i class="icon iconfont icon-gengduo"></i>
+            </a>
+        </header>
+        <section>
+            <ul class='list'>
+                <li>
+                    <div class='line'></div>
+                    <span class='wz'>大病救助</span>
+                </li>
+                <li class='left'>
+                    <span>目标金额     170000.00</span>
+                    <span>元</span>
+                </li>
+                <li>
+                    <span>资金用途 白血病治疗</span>
+                </li>
+                <li class='time'>
+                    <span>截止日期 2016-08-16 10:10 共10天</span>
+                    <p>
+                        3天
+                        <div class="progress">
+                            <div class="progress_bg">
+                                <div class="progress_bar"></div>
+                            </div>
+                            <div class="progress_btn"></div>
+                            <div class="text">0%</div>
+                        </div>
+                        <b></b>
+                        30天
+                    </p>
+                </li>
+            </ul>
+            <div class='title'>
+                <p>
+                    请救救我患白雪宁后方可是见覅借记卡放得开 就哦了发的快速离开开放端口 看看东方
+                </p>
+                <p>
+                    你付款来得及管理法律框架if结果ID的感觉了痛苦提供我我让人口头抗日根据欧共哦it肉骨头姜太公入库后看it人工破人口捅破看看个图片痛苦突然骨头客观题通通看透总令人感慨宏图高科我湖管理国家人的狗u欧地附近Igo
+                </p>
+            </div>
+            <div class='box'>
+                <span>滑过ID考试管理公开覆盖面洛凯股份过哦客户港口佛开会广发扣扣看股票分配了良好开个发票了官方频道了好评gfphlpflh </span>
+            </div>
+            <div class='cont'>
+                <img src="./img/book1.jpg">
+                <img src="./img/book1.jpg">
+            </div>
+        </section>
+        <footer>
+            <button>发布项目</button>
+            <script src='./js/libs/jquery-2.1.1.min.js'></script>
+            <script>
+                $(function () {
+                    var tag = false, ox = 0, left = 0, bgleft = 0;
+                    $('.progress_btn').mousedown(function (e) {
+                        ox = e.pageX - left;
+                        tag = true;
+                    });
+                    $(document).mouseup(function () {
+                        tag = false;
+                    });
+                    $('.progress').mousemove(function (e) {//鼠标移动
+                        if (tag) {
+                            left = e.pageX - ox;
+                            if (left <= 0) {
+                                left = 0;
+                            } else if (left > 300) {
+                                left = 300;
+                            }
+                            $('.progress_btn').css('left', left);
+                            $('.progress_bar').width(left);
+                            $('.text').html(parseInt((left / 300) * 100) + '%');
+                        }
+                    });
+                    $('.progress_bg').click(function (e) {//鼠标点击
+                        if (!tag) {
+                            bgleft = $('.progress_bg').offset().left;
+                            left = e.pageX - bgleft;
+                            if (left <= 0) {
+                                left = 0;
+                            } else if (left > 300) {
+                                left = 300;
+                            }
+                            $('.progress_btn').css('left', left);
+                            $('.progress_bar').animate({ width: left }, 300);
+                            $('.text').html(parseInt((left / 300) * 100) + '%');
+                        }
+                    });
+                });
+            </script>
+
+        </footer>
+    </div>
+</body>
+
+</html>
